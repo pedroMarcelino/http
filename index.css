@@ -1,13 +1,19 @@
 *{
     font-family: 'Montserrat', sans-serif;
+    text-align: justify;
 }
 body{
     padding: 0;
     margin: 0;
+    margin-bottom: 5%;
 }
 
 .bg-blue{
     background: #546de5;
+}
+
+.jumbotron{
+    border-radius: 0rem !important ;
 }
 
 .jumbotron h2{
@@ -33,4 +39,8 @@ svg {
     width: 100%;
     display: block;
     background: #546de5;    
+}
+
+.hidden{
+    display: none;
 }
