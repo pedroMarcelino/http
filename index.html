@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTTP</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -29,8 +32,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link active item-nav" id="method" href="#">Metodos HTTP <span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link active item-nav" id="req" href="#">Requisição <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link active item-nav" id="method" href="#">Metodos HTTP <span
+                                class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link active item-nav" id="req" href="#">Requisição <span
+                                class="sr-only">(current)</span></a>
                         <a class="nav-item nav-link active" href="#">Cookies <span class="sr-only">(current)</span></a>
                     </div>
                 </div>
@@ -39,17 +44,17 @@
     </header>
 
     <div class="jumbotron" id="img-jumb">
-        <h1 class="display-1 title" id="http">HTTP</h1>
-        <h1 class="display-1 title hidden" id="method">Metodos HTTP</h1>
-        <h1 class="display-1 title hidden" id="req">Requisição</h1>
-        
+        <h1 class="display-1 title" id="httpTitle">HTTP</h1>
+        <h1 class="display-1 title hidden" id="methodTitle">Metodos HTTP</h1>
+        <h1 class="display-1 title hidden" id="reqTitle">Requisição</h1>
+
     </div>
 
     <svg viewbox="0 0 100 25">
         <path fill="#ffffff" d="M0 30 V12 Q30 17 55 12 T100 11 V30z" />
     </svg>
 
-    <div class="container">
+    <div class="container content" id="httpContainer">
         <div class="row">
             <div class="col-md-12">
                 <h2>O que é HTTP</h2>
@@ -72,7 +77,8 @@
                     extensibilidade, é usado não apenas para buscar documentos de hipertexto, mas também para imagens e
                     vídeos ou para publicar conteúdo em servidores, como nos resultados de formulários HTML. O HTTP
                     também pode ser usado para buscar partes de documentos para atualizar páginas da Web sob demanda.
-                    também pode ser usado para buscar partes de documentos para atualizar páginas da Web sob demanda.</p>
+                    também pode ser usado para buscar partes de documentos para atualizar páginas da Web sob demanda.
+                </p>
             </div>
             <div class="col-md-12">
                 <h2 class="mt-3">Componentes de sistemas baseados em HTTP</h2>
@@ -88,9 +94,76 @@
                     de proxies , que executam operações diferentes e atuam como gateways ou caches , por exemplo.
                 </p>
             </div>
+        </div>
+    </div>
 
-            <div class="col-md-4">
-
+    <div class="container content hidden" id="methodContainer">
+        <div class="row">
+            <div class="col-md-3 justify">
+                <div class="frontDiv">GET</div>
+                <div class="backDiv">
+                </div>
+                <p class="mt-4">O método GET solicita a representação de um recurso específico. Requisições utilizando o
+                    método GET
+                    devem retornar apenas dados.</p>
+            </div>
+            <div class="col-md-3 justify">
+                <div class="frontDiv">HEAD</div>
+                <div class="backDiv">
+                </div>
+                <p class="mt-4">O método HEAD solicita uma resposta de forma idêntica ao método GET, porém sem conter o
+                    corpo da
+                    resposta.</p>
+            </div>
+            <div class="col-md-3 justify">
+                <div class="frontDiv">POST</div>
+                <div class="backDiv">
+                </div>
+                <p class="mt-4">O método POST é utilizado para submeter uma entidade a um recurso específico,
+                    frequentemente causando
+                    uma mudança no estado do recurso ou efeitos colaterais no servidor.</p>
+            </div>
+            <div class="col-md-3 justify">
+                <div class="frontDiv">PUT</div>
+                <div class="backDiv">
+                </div>
+                <p class="mt-4">O método PUT substitui todas as atuais representações do recurso de destino pela carga
+                    de dados da
+                    requisição.</p>
+            </div>
+            <div class="col-md-3 justify">
+                <div class="frontDiv">DELETE</div>
+                <div class="backDiv">
+                </div>
+                <p class="mt-4">O método DELETE remove um recurso específico.</p>
+            </div>
+            <div class="col-md-3 justify">
+                <div class="frontDiv">CONNECT</div>
+                <div class="backDiv">
+                </div>
+                <p class="mt-4">O método CONNECT estabelece um túnel para o servidor identificado pelo recurso de
+                    destino.</p>
+            </div>
+            <div class="col-md-3 justify">
+                <div class="frontDiv">OPTIONS</div>
+                <div class="backDiv">
+                </div>
+                <p class="mt-4">O método OPTIONS é usado para descrever as opções de comunicação com o recurso de
+                    destino.</p>
+            </div>
+            <div class="col-md-3 justify">
+                <div class="frontDiv">TRACE</div>
+                <div class="backDiv">
+                </div>
+                <p class="mt-4">O método TRACE executa um teste de chamada loop-back junto com o caminho para o recurso
+                    de destino.
+                </p>
+            </div>
+            <div class="col-md-3 justify">
+                <div class="frontDiv">PATCH</div>
+                <div class="backDiv">
+                </div>
+                <p class="mt-4">O método PATCH é utilizado para aplicar modificações parciais em um recurso.</p>
             </div>
         </div>
     </div>
