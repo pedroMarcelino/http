@@ -32,11 +32,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link active item-nav" id="req" href="#">Requisições HTTP <span
+                        <a class="nav-item nav-link active item-nav" id="req" href="#">Requisições<span
                                 class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link active item-nav" id="rec" href="#">Recursos <span
+                        <a class="nav-item nav-link active item-nav" id="msg" href="#">Mensagens<span
                                 class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link active" href="#">Cookies <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link active item-nav" id="recursos" href="#">URI, URN e URL<span
+                                class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link active item-nav" id="https" href="#">HTTPS<span
+                                class="sr-only">(current)</span></a>
+
                     </div>
                 </div>
             </div>
@@ -46,7 +50,10 @@
     <div class="jumbotron" id="img-jumb">
         <h1 class="display-1 title" id="httpTitle">HTTP</h1>
         <h1 class="display-1 title hidden" id="reqTitle">Requisições HTTP</h1>
-        <h1 class="display-1 title hidden" id="recTitle">Recursos</h1>
+        <h1 class="display-1 title hidden" id="msgTitle">Mensagens</h1>
+        <h1 class="display-1 title hidden" id="recursosTitle">URI, URN e URL</h1>
+        <h1 class="display-1 title hidden" id="httpsTitle">HTTPS</h1>
+
 
     </div>
 
@@ -57,7 +64,7 @@
     <div class="container content" id="httpContainer">
         <div class="row">
             <div class="col-md-12">
-                <h2>O que é HTTP</h2>
+                <h2 class="titleSec">O que é HTTP</h2>
 
                 <p class="mt-4">HTTP é um protocolo que permite a busca de recursos, como documentos HTML. É a base de
                     qualquer
@@ -81,7 +88,7 @@
                 </p>
             </div>
             <div class="col-md-12">
-                <h2 class="mt-3">Componentes de sistemas baseados em HTTP</h2>
+                <h2 class=" titleSec mt-3">Componentes de sistemas baseados em HTTP</h2>
                 <p class="mt-4">
                     HTTP é um protocolo cliente-servidor: as solicitações são enviadas por uma entidade, o agente do
                     usuário (ou um proxy em seu nome). Na maioria das vezes, o agente do usuário é um navegador da Web,
@@ -168,10 +175,220 @@
         </div>
     </div>
 
-    <div class="container content hidden" id="recContainer">
-        dassadsadsa
+    <div class="container content hidden" id="msgContainer">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Dados são trocados entre servidor e cliente por meio de mensagens HTTP. Há dois tipos de
+                    mensagens:
+                    requisições (requests) enviadas pelo cliente para disparar uma ação no servidor, e respostas
+                    (responses), a réplica do servidor.</p>
+
+                <p> Mensagens HTTP são compostas de informação textual codificada em ASCII, e se espalham por multiplas
+                    linhas. Em HTTP/1.1, e versões anteriores do protocolo, estas mensagens eram abertamente enviadas
+                    através da conexão. Em HTTP/2, a mensagem antes legível por humanos é agora dividida em quadros
+                    HTTP,
+                    resultando em otimização e melhora de desempenho.</p>
+
+                <p> Desenvolvedores Web, ou webmasters, raramente lidam com essas mensagens textuais diretamente: um
+                    programa, um navegador, um proxy, ou um servidor Web, executam essa ação. Eles proveem mensagens
+                    HTTP
+                    por meio de arquivos de configuração (para proxys ou servidores), APIs (para navegadores) ou outras
+                    interfaces.</p>
+                <p>Requisições e respostas HTTP compartilham estrutura similar e são compostas de:</p>
+            </div>
+            <div>
+                <div class="col-md-12">
+                    <h2 class="">I</h2>
+                    Uma linha inicial (start-line) que descreve as requisições a serem
+                    implementadas, ou seu status
+                    de sucesso ou falha. Esta linha inicial é sempre uma única.</p>
+                </div>
+                <div class="col-md-12">
+                    <h2 class="aling">II</h2>
+                    <p>Um conjunto opcional de cabeçalhos HTTP especificando a requisição, ou descrevendo o corpo
+                        incluso na mensagem.</p>
+                </div>
+                <div class="col-md-12">
+                    <h2 class="w50">III</h2>
+                    <p>Uma linha em branco (empty line) indicando que toda meta-informação para a
+                        requisição já foi
+                        enviada.</p>
+                </div>
+                <div class="col-md-12">
+                    <h2 class="aling">VI</h2>
+                    <p>Um corpo (body) contendo dados associados à requisição (como o conteúdo de um formulário HTML),
+                        ou o documento associado à resposta. A presença do corpo e seu tamanho são especificados pela
+                        linha inicial e os cabeçalhos HTTP.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mt-5">
+                <div class="backDiv2">
+                    <div class="frontDiv2">STATUS</div>
+                </div>
+                <p>
+                    <p>1. A versão do protocolo, normalmente HTTP/1.1.</p>
+                    <p>2. Um código de status, indicando o sucesso ou falha da requisição. Códigos de status comuns são
+                        200,
+                        404, ou 302</p>
+                    <p>3. Um texto de status. Uma descrição textual breve, puramente informativa, do código de status a
+                        fim de
+                        auxiliar o entendimento da mensagem HTTP por humanos.</p>
+                </p>
+            </div>
+            <div class="col-md-4 mt-5">
+                <div class="backDiv2">
+                    <div class="frontDiv2">Cabeçalhos</div>
+                </div>
+                <p>
+                    <p>1. Cabeçalhos gerais, como Via, aplicam-se à toda mensagem.</p>
+                    <p>2. Cabeçalhos de resposta, como Vary e Accept-Ranges, dão informação adicional sobre o servidor,
+                        que não cabe na linha de status.</p>
+                    <p>3. Cabeçalhos de entidade, como Content-Length, aplicam-se ao corpo da resposta. Obviamente este
+                        cabeçalho não será transmitido se não houver corpo na resposta.</p>
+                </p>
+            </div>
+            <div class="col-md-4 mt-5">
+                <div class="backDiv2">
+                    <div class="frontDiv2">Corpo</div>
+                </div>
+                <p>
+                    <p>1. Corpos de recurso simples que consistem em um único arquivo de tamanho conhecido, definido
+                        pelos dois cabeçalhos: Content-Type e Content-Length.</p>
+                    <p>2. Corpos de recurso simples que consistem em um único arquivo de tamanho desconhecido,
+                        codificado aos pedaços com Transfer-Encoding ajustado para chunked.</p>
+                    <p>3. Corpos de recurso múltiplo, que consiste em um corpo com múltiplas partes, cada uma contendo
+                        diferentes seções de informação. Estes são relativamente raros.</p>
+                </p>
+            </div>
+        </div>
     </div>
 
+    <div class="container content hidden" id="recursosContainer">
+        <h2 class="titleSec">URLs e URNs</h2>
+        <div class="row">
+            <div class="col-md-6 mt-5">
+                <div class="col-md-3">
+                    <div class="frontDiv">URL</div>
+                    <div class="backDiv">
+                    </div>
+                </div>
+                <p>A forma mais comum de URL é o Uniform Resource Locator (URL) , que é conhecido como endereço de Web.
+                </p>
+            </div>
+            <div class="col-md-6 mt-5">
+                <div class="col-md-3">
+                    <div class="frontDiv">URN</div>
+                    <div class="backDiv">
+                    </div>
+                </div>
+                <p>Um Nome de Recurso Uniforme do inglês Uniform Resource Name (URN) é uma URI que identifica um recurso
+                    pelo nome em um namespace particular.</p>
+            </div>
+        </div>
+        <h2 class="mt-5 titleSec">URI</h2>
+
+        <div class="col-md-12 mt-5">
+            <div class="frontDiv titleSec">Esquema ou protocolo</div>
+            <div class="backDiv">
+            </div>
+        </div>
+        <p>Um Nome de Recurso Uniforme do inglês Uniform Resource Name (URN) é uma URI que identifica um recurso
+            pelo nome em um namespace particular.</p>
+
+        <div class="col-md-12 mt-5">
+            <div class="frontDiv titleSec">Autoridade</div>
+            <div class="backDiv">
+            </div>
+        </div>
+        <p>www.example.com é o nome de domínio ou autoridade que governa o namespace. Ele indica qual servidor web será
+            solicitado. Alternativamente, é possível utilizar um IP address, mas isso pode ser menos conveniente e não é
+            muito utilizado na Web.</p>
+
+        <div class="col-md-12 mt-5">
+            <div class="frontDiv titleSec">Porta</div>
+            <div class="backDiv">
+            </div>
+        </div>
+        <p>:80 é a porta nesta instância . Ela indica qual é o "portão" técnico usado para acessar os recursos no
+            servidor web. Usualmente ela é omitida se o servidor web utiliza a porta padrão do protocolo HTTP (80 para
+            HTTP e 443 para HTTPS) para garantir o acesso aos recursos. Do contrário, ela se torna obrigatória.</p>
+
+        <div class="col-md-12 mt-5">
+            <div class="frontDiv titleSec">Caminhos</div>
+            <div class="backDiv">
+            </div>
+        </div>
+        <p>/path/to/myfile.html é o caminho para o recurso no servidor Web. Nos primeiros dias da Web, um caminho era
+            representado pelo caminho físico correspondente no servidor web. Hoje em dia isso é mais uma abstração
+            tratada pelos servidores Web não sendo necessariamente o endereço físico do arquivo em questão.</p>
+
+        <div class="col-md-12 mt-5">
+            <div class="frontDiv titleSec">Query / Parâmetros</div>
+            <div class="backDiv">
+            </div>
+        </div>
+        <p>?key1=value1&key2=value2 são parâmetros extras fornecidos ao servidor Web. Eles são uma lista de pares
+            chaves/valores separados com o símbolo & O servidor web pode usar esses parametros para fazer coisas extras
+            depois retornando o recurso para o usuário. Cada servidor web tem suas regras em relação aos parâmetros, e o
+            unico jeito confiável de saber como um servidor Web especifico trata os parâmetros é perguntando o dono do
+            servidor.</p>
+
+        <div class="col-md-12 mt-5">
+            <div class="frontDiv titleSec">Fragmentos</div>
+            <div class="backDiv">
+            </div>
+        </div>
+        <p>#SomewhereInTheDocument é uma âncora para outra parte do próprio recurso. Uma âncora representa uma espécie
+            de "marcador" dentro do recurso, dando ao navegador as instruções para mostrar o conteúdo localizado naquele
+            ponto "marcado". Em um documento HTML, por exemplo, o navegador erá dar scroll para a ancora em um ponto
+            definido; em um vídeo ou audio, o navegor erá tentar ir para o tempo que a âncora representa. Vale ressaltar
+            que a parte após o #, também conhecido como identificador de fragmento, nunca é enviado ao servidor com o
+            pedido.</p>
+    </div>
+
+    <div class="container content hidden" id="httpsContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>HTTPS é a sigla em inglês de Hyper Text Transfer Protocol Secure, que em português significa
+                        “Protocolo de Transferência de Hipertexto Seguro”.</p>
+
+                    <p>Atualmente, esta é a versão mais segura do protocolo de transferência de dados entre redes de
+                        computadores na internet, pois faz a encriptação dos dados fornecidos, requer a autenticação dos
+                        servidores, entre outras ferramentas que garantam a segurança dos dados enviados e recebidos
+                        pelo
+                        usuário.</p>
+
+                    <p>O HTTPS é a combinação dos protocolos HTTP e SSL (Secure Sockets Layers, em inglês).</p>
+
+                    <p>Saiba mais sobre o significado do HTTP.</p>
+
+                    <p>Este protocolo aparece antes do endereço eletrônico do site que o usuário deseja acessar (URL),
+                        garantindo que se trata de uma conexão de dados segura entre o computador do usuário e os
+                        servidores
+                        que abrigam os sites acessados.</p>
+
+                    <p>Os sites que são acessados a partir de um protocolo de transferência de hipertexto seguro,
+                        aparecem
+                        com o código “https://” antes do URL.</p>
+
+                    <p>Descubra mais sobre o significado de URL.</p>
+
+                    <p>A principal diferença entre um protocolo HTTP e o HTTPS está justamente na comunicação
+                        criptografada
+                        deste último, que ajuda a evitar possíveis tentativas de roubo de informações durante a
+                        transmissão
+                        dos dados entre o computador do usuário e os servidores dos sites.</p>
+
+                    <p>No entanto, as conexões HTTPS não são totalmente seguras, sendo necessário a presença de
+                        softwares
+                        de Internet Security instalados no computador, além de ficar sempre atento a suspeitas de
+                        conexões
+                        duvidosas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="index.js"></script>
 </body>
