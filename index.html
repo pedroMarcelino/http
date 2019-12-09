@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTTP</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -394,9 +395,15 @@
     </div>
 
     <div class="container content hidden" id="reqresContainer">
-        <div class="container">
-            <div class="row" id="return">
+        <div class="row">
+            <div class="col-md-2">
+                <button class="btn btn-default btn-block" id="listUsers">List Users</button>
             </div>
+        </div>
+        <div id="img-loading" class="hidden">
+            <img src="img/loading_files/h6viz.gif" class="center-img" alt="loading...">
+        </div>
+        <div class="row mt-5" id="return">
         </div>
     </div>
 

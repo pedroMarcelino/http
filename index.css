@@ -82,3 +82,14 @@ svg {
 .titleSec{
     font-weight: bold;
 }
+
+.cardhover:hover{
+    box-shadow: #757070 0px 3px 3px 0px;
+    transition: 0.4s;
+}
+
+.center-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
