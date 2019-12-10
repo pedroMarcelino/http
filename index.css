@@ -93,3 +93,16 @@ svg {
     margin-left: auto;
     margin-right: auto 
 }
+
+.btn-blue{
+    background: #fff;
+    border: #546de5 1px solid;
+    color: #546de5;
+    font-weight: bold;
+
+}
+
+.btn-blue:hover{
+    background: #546de5;
+    color: #fff;
+}

@@ -29,7 +29,7 @@ $(function () {
         }
 
         $.ajax({
-            url: 'https://reqres.in/aers',
+            url: 'https://reqres.in/api/users',
             type: 'GET',
             data: '',
             beforeSend: function () {
@@ -74,11 +74,41 @@ $(function () {
                     colbody.appendChild(h4);
                     colbody.appendChild(img);
                     colbody.appendChild(p);
+                    code.status = 0;
                 });
 
 
             },
         });
+    });
+
+    $('#singleUsers').on('click', function () {
+        var ret = document.getElementById('return');
+
+        if (ret.children.length > 0) {
+            var prim = ret.firstElementChild;
+            while (prim) {
+                prim.remove();
+                prim = ret.firstElementChild;
+            }
+        }
+
+        var col = document.createElement('div');
+        col.classList.add('col-md-3');
+
+        var inp = document.createElement('input');
+        inp.setAttribute('type', 'text');
+        inp.setAttribute('class', 'form-control');
+        inp.setAttribute('placeholder', 'Digite o codigo de Usuario')
+        inp.setAttribute('id', 'inp-Search');
+
+        ret.appendChild(col);
+        col.appendChild(inp);
+    });
+
+    $("#inp-Search").keypress(function () {
+        var valInp = $(this).val();
+        console.log(valInp);
     });
 
 });
