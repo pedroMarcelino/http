@@ -400,13 +400,91 @@
                 <button class="btn btn-default btn-block btn-blue" id="listUsers">List Users</button>
             </div>
             <div class="col-md-2">
-                <button class="btn btn-default btn-block btn-blue" id="singleUsers">Single Users</button>
+                <button class="btn btn-default btn-block btn-blue" id="listResource">List Resource</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-default btn-block btn-blue" id="btn-create">POST Create</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-default btn-block btn-blue" id="btn-update">PUT Update</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-default btn-block btn-blue" id="btn-patch">PATCH Update</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-default btn-block btn-blue" id="btn-delete">DELETE Update</button>
             </div>
         </div>
         <div id="img-loading" class="hidden">
             <img src="img/loading_files/h6viz.gif" class="center-img" alt="loading...">
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" class="form-control wSearch hidden" placeholder="Digite o codigo de Usuario"
+                    id="inp-Search">
+            </div>
+            <div class="col-md-12">
+                <input type="text" class="form-control wSearch hidden" placeholder="Digite o codigo da resource"
+                    id="res-Search">
+            </div>
+        </div>
         <div class="row mt-5" id="return">
+        </div>
+        <div class="row hidden" id="createPOST">
+            <form class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">Nome: </label>
+                    <input type="text" class="form-control" id="inp-name" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="job">Emprego: </label>
+                    <input type="text" class="form-control" id="inp-job" placeholder="Digite seu emprego">
+                </div>
+                <button class="btn btn-default btn-block btn-blue" id="sendPOST">Enviar</button>
+            </form>
+            <div class="col-md-8">
+                <p id="id">ID:</p>
+                <p id="name">Nome:</p>
+                <p id="job"> Emprego:</p>
+                <p id="create">Data de Criação:</p>
+            </div>
+        </div>
+        <div class="row hidden" id="updatePOST">
+            <form class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">Nome: </label>
+                    <input type="text" class="form-control" id="inp-name2" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="job">Emprego: </label>
+                    <input type="text" class="form-control" id="inp-job2" placeholder="Digite seu emprego">
+                </div>
+                <button class="btn btn-default btn-block btn-blue" id="btn-updatePOST">Enviar</button>
+            </form>
+            <div class="col-md-8">
+                <p id="name2">Nome:</p>
+                <p id="job2"> Emprego:</p>
+                <p id="create2">Data de upgrade:</p>
+            </div>
+        </div>
+
+        <div class="row hidden" id="patchPOST">
+            <form class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">Nome: </label>
+                    <input type="text" class="form-control" id="inp-name3" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="job">Emprego: </label>
+                    <input type="text" class="form-control" id="inp-job3" placeholder="Digite seu emprego">
+                </div>
+                <button class="btn btn-default btn-block btn-blue" id="btn-patchPOST">Enviar</button>
+            </form>
+            <div class="col-md-8">
+                <p id="name3">Nome:</p>
+                <p id="job3"> Emprego:</p>
+                <p id="create3">Data de upgrade:</p>
+            </div>
         </div>
     </div>
 
