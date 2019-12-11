@@ -398,16 +398,19 @@ $(function () {
 
     //exibi a parte do post
     $('#btn-create').on('click', function () {
+        clearReturn();
         $('#createPOST').attr('class', 'row');
     });
 
     //exibi a parte do update
     $('#btn-update').on('click', function () {
+        clearReturn();
         $('#updatePOST').attr('class', 'row');
     });
 
     //exibi a parte do patch
     $('#btn-patch').on('click', function () {
+        clearReturn();
         $('#patchPOST').attr('class', 'row');
     });
 
