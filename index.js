@@ -20,7 +20,7 @@ $(function () {
 
     //lista Usuarios
     $('#listUsers').on('click', function () {
-
+        clearFields();
         clearReturn();
 
         //requisição para trazer usuarios
@@ -86,7 +86,7 @@ $(function () {
 
     // faz uma requisição toda vez que digita;
     $("#inp-Search").keyup(function () {
-
+        clearFields();
         clearReturn();
 
         var valueInp = $(this).val();
@@ -214,6 +214,7 @@ $(function () {
 
     //lista os resoucer
     $('#listResource').on('click', function () {
+        clearFields();
         clearReturn();
         $('#inp-Search').attr('class', 'form-control wSearch mt-5 hidden');
         $('#res-Search').attr('class', 'form-control wSearch mt-5 ');
@@ -267,8 +268,9 @@ $(function () {
             },
         });
     });
-    $("#res-Search").keyup(function () {
 
+    $("#res-Search").keyup(function () {
+        clearFields();
         clearReturn();
 
         var valueInp = $(this).val();
@@ -394,6 +396,14 @@ $(function () {
                 prim = ret.firstElementChild;
             }
         }
+    }
+
+    function clearFields() {
+        $('#res-Search').attr('class', 'form-control wSearch mt-5 hidden');
+        $('#inp-Search').attr('class', 'form-control wSearch mt-5 hidden')
+        $('#createPOST').attr('class', 'row hidden');
+        $('#updatePOST').attr('class', 'row hidden');
+        $('#patchPOST').attr('class', 'row hidden');
     }
 
     //exibi a parte do post
