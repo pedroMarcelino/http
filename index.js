@@ -462,7 +462,7 @@ $(function () {
                 id.innerHTML = 'ID: ' + data.id;
                 job.innerHTML = 'Emprego: ' + data.job;
                 name.innerHTML = 'Name: ' + data.name;
-                create.innerHTML = 'Data de Criação : ' + data.createAt;
+                create.innerHTML = 'Data de Criação : ' + data.createdAt;
             },
             error: function (e) {
                 swal('' + e.status, "Status Code");
