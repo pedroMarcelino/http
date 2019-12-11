@@ -399,18 +399,28 @@ $(function () {
     //exibi a parte do post
     $('#btn-create').on('click', function () {
         clearReturn();
+        $('#createPOST').attr('class', 'row hidden');
+        $('#updatePOST').attr('class', 'row hidden');
+        $('#patchPOST').attr('class', 'row hidden');
         $('#createPOST').attr('class', 'row');
     });
 
     //exibi a parte do update
     $('#btn-update').on('click', function () {
         clearReturn();
+        $('#createPOST').attr('class', 'row hidden');
+        $('#updatePOST').attr('class', 'row hidden');
+        $('#patchPOST').attr('class', 'row hidden');
         $('#updatePOST').attr('class', 'row');
+
     });
 
     //exibi a parte do patch
     $('#btn-patch').on('click', function () {
         clearReturn();
+        $('#createPOST').attr('class', 'row hidden');
+        $('#updatePOST').attr('class', 'row hidden');
+        $('#patchPOST').attr('class', 'row hidden');
         $('#patchPOST').attr('class', 'row');
     });
 
