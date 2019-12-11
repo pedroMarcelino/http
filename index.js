@@ -408,6 +408,7 @@ $(function () {
 
     //exibi a parte do post
     $('#btn-create').on('click', function () {
+        clearFields()
         clearReturn();
         $('#createPOST').attr('class', 'row hidden');
         $('#updatePOST').attr('class', 'row hidden');
@@ -417,6 +418,7 @@ $(function () {
 
     //exibi a parte do update
     $('#btn-update').on('click', function () {
+        clearFields()
         clearReturn();
         $('#createPOST').attr('class', 'row hidden');
         $('#updatePOST').attr('class', 'row hidden');
@@ -427,6 +429,7 @@ $(function () {
 
     //exibi a parte do patch
     $('#btn-patch').on('click', function () {
+        clearFields()
         clearReturn();
         $('#createPOST').attr('class', 'row hidden');
         $('#updatePOST').attr('class', 'row hidden');
@@ -514,7 +517,6 @@ $(function () {
             data: dados,
             dataType: 'JSON',
             success: function (data) {
-                console.log(data);
                 var job = document.getElementById('job3');
                 var name = document.getElementById('name3');
                 var create = document.getElementById('create3');
@@ -532,6 +534,8 @@ $(function () {
 
     //req delete
     $('#btn-delete').on('click', function () {
+        clearFields();
+        clearReturn();
         $.ajax({
             url: 'https://reqres.in/api/users/2',
             type: 'DELETE',
